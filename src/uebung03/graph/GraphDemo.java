@@ -2,9 +2,9 @@ package uebung03.graph;
 
 public class GraphDemo {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Graph graph = new Graph();
-        
+
         Node a = new Node("A");
         Node b = new Node("B");
         Node c = new Node("C");
@@ -33,7 +33,7 @@ public class GraphDemo {
         System.out.println(c);
         System.out.println(d);
         System.out.println(e);
-        
+
         System.out.println("\n");
         System.out.println(graph);
 
@@ -41,5 +41,4 @@ public class GraphDemo {
         System.out.println(graph.depthFirst(a));
         System.out.println(graph.breadthFirst(a));
     }
-    
 }

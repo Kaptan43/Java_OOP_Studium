@@ -4,21 +4,21 @@ public class Edge {
     private int length;
     private Node target;
 
-    public Edge(int length, Node target){
+    public Edge(int length, Node target) {
         this.length = length;
         this.target = target;
     }
 
-    public int getLength(){
+    public int getLength() {
         return length;
     }
 
-    public Node getTarget(){
+    public Node getTarget() {
         return target;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return ("-" + length + "->" + target.getName());
     }
 }
