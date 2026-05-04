@@ -1,4 +1,4 @@
-package uebung04;
+package uebung04.chess;
 
 public class Chess {
     public static void main(String[] args) {

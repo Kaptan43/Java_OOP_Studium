@@ -1,4 +1,4 @@
-package uebung04;
+package uebung04.chess;
 
 import static java.lang.Integer.signum;
 import static java.lang.Math.abs;

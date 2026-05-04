@@ -1,4 +1,4 @@
-package uebung04;
+package uebung04.chess;
 
 import java.util.ArrayList;
 
