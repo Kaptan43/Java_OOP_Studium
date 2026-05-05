@@ -1,8 +1,8 @@
 package uebung03.graph;
 
 public class Edge {
-    private int length;
-    private Node target;
+    private final int length;
+    private final Node target;
 
     public Edge(int length, Node target) {
         this.length = length;

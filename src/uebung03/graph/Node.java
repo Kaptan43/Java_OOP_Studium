@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
-    private String name;
-    private List<Edge> edges;
+    private final String name;
+    private final List<Edge> edges;
     private boolean marked = false;
 
     public Node(String name) {

@@ -4,6 +4,7 @@ public class Polynomial {
     private final int[] polynom;
     private final int degree;
 
+    //Üben: Arrays.CopyOpf verwenden --> while(deg > 0 && coeff[deg] == 0){deg--;}
     public Polynomial(int[] polynom) {
         this.polynom = polynom;
         int tempDegree = 0;
@@ -27,6 +28,8 @@ public class Polynomial {
     public int getDegree() {
         return degree;
     }
+
+    //public int getPolynom(int i){ return i>degree ? 0 : polynom[i]; }
 
     @Override
     public String toString() {

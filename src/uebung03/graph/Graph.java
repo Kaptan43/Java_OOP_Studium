@@ -6,7 +6,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 public class Graph {
-    private List<Node> nodes;
+    private final List<Node> nodes;
 
     public Graph() {
         this.nodes = new ArrayList<Node>();
