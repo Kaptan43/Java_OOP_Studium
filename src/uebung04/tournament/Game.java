@@ -1,6 +1,7 @@
 package uebung04.tournament;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface Game {
     public int getID();
@@ -8,6 +9,7 @@ public interface Game {
     public void setWinner(String name);
     public String getPlayer1();
     public String getPlayer2();
-    public ArrayList<String> getAllPlayers();
+    public List<String> getAllPlayers();
+    public List<Game> getAllGames();
 }
 

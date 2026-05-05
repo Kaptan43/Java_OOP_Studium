@@ -3,18 +3,16 @@ package uebung04.tournament;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeededGame implements Game{
-    private String player1;
-    private String player2;
-    private final ArrayList<String> players = new ArrayList<>();
+public class OrdinaryGame implements Game {
+
+    private Game previousGame1;
+    private Game previousGame2;
     private GameData gamedata;
 
-    public SeededGame(String player1, String player2){
+    public OrdinaryGame(Game previousGame1, Game previousGame2){
         gamedata = new GameData();
-        this.player1 = player1;
-        this.player2 = player2;
-        players.add(player1);
-        players.add(player2);
+        this.previousGame1 = previousGame1;
+        this.previousGame2 = previousGame2;
     }
 
     @Override
@@ -29,22 +27,25 @@ public class SeededGame implements Game{
 
     @Override
     public String getPlayer1(){
-        return player1;
+        return previousGame1.getWinner();
     }
 
     @Override
     public String getPlayer2(){
-        return player2;
+        return previousGame2.getWinner();
     }
 
     @Override
-    public ArrayList<String> getAllPlayers(){
+    public List<String> getAllPlayers(){
+        List<String> players = new ArrayList<>();
+        players.addAll(previousGame1.getAllPlayers());
+        players.addAll(previousGame2.getAllPlayers());
         return players;
     }
 
     @Override
     public void setWinner(String name){
-        if(player1 != null && player2 != null && (name.equals(player1) || name.equals(player2)) && gamedata.getWinner() == null){
+        if(this.getPlayer1() != null && this.getPlayer2() != null && (name.equals(this.getPlayer1()) || name.equals(this.getPlayer2())) && gamedata.getWinner() == null){
             gamedata.setWinner(name);
         }
     }
@@ -52,6 +53,8 @@ public class SeededGame implements Game{
     @Override
     public List<Game> getAllGames(){
         List<Game> games = new ArrayList<>();
+        games.addAll(previousGame1.getAllGames());
+        games.addAll(previousGame2.getAllGames());
         games.add(this);
         return games;
     }
@@ -61,3 +64,4 @@ public class SeededGame implements Game{
         return "Game: " + getID() + " --> Player1: " + getPlayer1() + " vs Player2: " + getPlayer2();
     }
 }
+

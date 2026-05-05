@@ -1,4 +1,3 @@
-/*
 package uebung04.tournament;
 
 import org.junit.Before;
@@ -133,5 +132,3 @@ public class TournamentTest {
         return new HashSet<>(collection);
     }
 }
-
- */
