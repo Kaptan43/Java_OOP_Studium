@@ -24,14 +24,42 @@ public class Tournament {
         return games;
     }
 
+    /* --> Erster Gedanke
     public List<String> getRemainingPlayers(){
         List<String> remaining = new ArrayList<>();
-        for(Game game : this.getAllGames()){
+        if(finalGame.getWinner() != null){
+            remaining.add(finalGame.getWinner());
+        }
+        for(Game game : getAllGames()){
             if(game.getWinner() == null){                       //Auch möglich: if(!game.getAllPlayers().isEmpty() && game.getWinner() == null)
                 if(game.getPlayer1() != null) remaining.add(game.getPlayer1());
                 if(game.getPlayer2() != null) remaining.add(game.getPlayer2());
             }
+            if(game.getWinner() != null){
+                if(game.getWinner().equals(game.getPlayer1())) remaining.remove(game.getPlayer2());
+                if(game.getWinner().equals(game.getPlayer2())) remaining.remove(game.getPlayer1());
+            }
         }
+        return remaining;
+    }
+    */
+
+    // --> Empfohlen mit Liste der Verlierer
+    public List<String> getRemainingPlayers(){
+        List<String> remaining = new ArrayList<>(getAllPlayers()); //Alle Spieler
+        List<String> losers = new ArrayList<>();
+
+        for(Game game : getAllGames()){
+            if(game.getWinner() != null){
+                if(game.getPlayer1() != null && !game.getPlayer1().equals(game.getWinner())){
+                    losers.add(game.getPlayer1());
+                }
+                if(game.getPlayer2() != null && !game.getPlayer2().equals(game.getWinner())){
+                    losers.add(game.getPlayer2());
+                }
+            }
+        }
+        remaining.removeAll(losers);
         return remaining;
     }
 
