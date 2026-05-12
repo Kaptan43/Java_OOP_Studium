@@ -6,9 +6,7 @@ class GameData {
     private String winner;
 
     GameData(){
-        id = counter;
-        counter ++;
-        winner = null;
+        id = counter++;
     }
 
     int getID(){
@@ -19,7 +17,16 @@ class GameData {
         return winner;
     }
 
-    void setWinner(String winner){
-        this.winner = winner;
+    public void setWinner(String name, String p1, String p2){
+        if(getWinner() != null){
+            throw new IllegalStateException("Gewinner des Spiels steht bereits fest!");
+        }
+        if(p1 == null || p2 == null){
+            throw new IllegalStateException("Mindestens einer der Spieler steht noch nicht fest!");
+        }
+        if(!name.equals(p1) && !name.equals(p2)){
+            throw new IllegalArgumentException("Gewinner stimmt nicht mit den Namen der Spieler des Spiels überein!");
+        }
+        winner = name;
     }
 }

@@ -3,7 +3,7 @@ package uebung04.tournament;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tournament {
+public class Tournament{
     private String name;
     private Game finalGame;
 
@@ -17,11 +17,15 @@ public class Tournament {
         players.addAll(finalGame.getAllPlayers());
         return players;
     }
-
+/*
     public List<Game> getAllGames(){
         List<Game> games = new ArrayList<>();
         games.addAll(finalGame.getAllGames());
         return games;
+    }
+*/
+    public List<Game> getAllGames(){
+        return new ArrayList<>(List.of(finalGame.getAllGames().toArray(new Game[0])));
     }
 
     /* --> Erster Gedanke

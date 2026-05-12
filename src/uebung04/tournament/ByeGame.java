@@ -52,19 +52,9 @@ public class ByeGame implements Game {
     }
     */
 
-    // --> Mit Exception
     @Override
     public void setWinner(String name){
-        if(gamedata.getWinner() != null){
-            throw new IllegalStateException("Gewinner des Spiels steht bereits fest!");
-        }
-        if(player1 == null || getPlayer2() == null){
-            throw new IllegalStateException("Mindestens einer der Spieler steht noch nicht fest!");
-        }
-        if(!name.equals(player1) && !name.equals(getPlayer2())){
-            throw new IllegalArgumentException("Gewinner stimmt nicht mit den Namen der Spieler des Spiels überein!");
-        }
-        gamedata.setWinner(name);
+        gamedata.setWinner(name, getPlayer1(), getPlayer2());
     }
 
     @Override
