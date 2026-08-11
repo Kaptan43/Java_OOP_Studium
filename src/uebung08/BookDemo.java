@@ -102,12 +102,12 @@ public class BookDemo {
         final Book book = makeBook();
 
         // Aufgabe 1
-        System.out.println("Buch enthält " + book.countWords() + " Wörter");
+        System.out.println("Buch enthält " + book.countWords() + " Wörter"); //1086
 
         // Aufgabe 2
         System.out.println("Buch enthält " + book.countWordsByVisitor() + " Wörter");
-        System.out.println("Inhalt: " + book.tableOfContents());
-        System.out.println(book.toText());
+        //System.out.println("Inhalt: " + book.tableOfContents());
+        //System.out.println(book.toText());
     }
 
     private static Book makeBook() {

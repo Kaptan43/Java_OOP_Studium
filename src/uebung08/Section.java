@@ -12,6 +12,10 @@ public class Section implements TextComponent{
         this.contents = contents;
     }
 
+    public List<TextComponent> getContents() {
+        return contents;
+    }
+
     @Override
     public  int countWords(){
         int sum = 0;

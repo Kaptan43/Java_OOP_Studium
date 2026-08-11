@@ -8,18 +8,31 @@ public class Book {
     private String author;
     private List<TextComponent> contents = new ArrayList<>();
 
-    public Book(String title, String author, List<TextComponent> contents){
-        this.title = title;
+    public Book(String author, String title, List<TextComponent> contents){
         this.author = author;
+        this.title = title;
         this.contents = contents;
     }
 
     public int countWords(){
-        int sum = 0;
+        int counter = 0;
+
         for(TextComponent tc : contents){
-            sum += tc.countWords();
+            counter += tc.countWords();
         }
-        return sum;
+        return counter;
+    }
+
+    public int countWordsByVisitor(){
+        int counter = 0;
+
+        Visitor<Integer> visitor = new CountWordsVisitor();
+
+        for(TextComponent tc : contents){
+            counter += tc.accept(visitor);
+        }
+        return counter;
     }
 
 }
+

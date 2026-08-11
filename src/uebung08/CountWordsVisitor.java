@@ -24,6 +24,12 @@ public class CountWordsVisitor implements Visitor<Integer>{
 
     @Override
     public Integer visit(Section section){
+        int counter = 0;
 
+        for(TextComponent tc : section.getContents()){
+            counter += tc.countWords();
+        }
+
+        return counter;
     }
 }
