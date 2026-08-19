@@ -16,6 +16,10 @@ public class Section implements TextComponent{
         return contents;
     }
 
+    public String getHeader() {
+        return header;
+    }
+
     @Override
     public  int countWords(){
         int sum = 0;

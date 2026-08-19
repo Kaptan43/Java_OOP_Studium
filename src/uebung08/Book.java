@@ -34,5 +34,15 @@ public class Book {
         return counter;
     }
 
+    public List<String> tableOfContents(){
+        Visitor<List<String>> visitor = new TableOfContentsVisitor("");     //Startpräfix: leer
+        List<String> result = new ArrayList<>();
+
+        for(TextComponent tc : contents){
+            result.addAll(tc.accept(visitor));
+        }
+        return result;
+    }
+
 }
 
