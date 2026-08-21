@@ -1,9 +1,8 @@
-/*
 package uebung07.quantities.generic;
 
-
 public class LengthUnit extends Unit<Length> {
-    public LengthUnit(String name, double baseFactor) {
+
+    public LengthUnit(String name, double baseFactor){
         super(name, baseFactor);
     }
 
@@ -13,5 +12,9 @@ public class LengthUnit extends Unit<Length> {
     public static final LengthUnit MILE = new LengthUnit("mi", 1609.344);
     public static final LengthUnit LIGHTYEAR = new LengthUnit("ly", 9460730472580800.0);
     public static final LengthUnit PARSEC = new LengthUnit("pc", 3.0856776e16);
+
+    @Override
+    public Length quantity(double value){
+        return new Length(value, this);
+    }
 }
- */
