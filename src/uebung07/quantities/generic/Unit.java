@@ -11,4 +11,9 @@ public abstract class Unit<T extends Quantity<T>> {
 
     public abstract T quantity(double value);
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }

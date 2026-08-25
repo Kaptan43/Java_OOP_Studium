@@ -41,4 +41,13 @@ public abstract class Quantity<Q extends Quantity<Q>> {
         return getBaseValue() / other.getBaseValue();
     }
 
+    @Override
+    public String toString() {
+        return value + " " + unit;
+    }
+
+    public String format(String fmt, Unit<Q> unit) {
+        return String.format(fmt, value(unit), unit);
+    }
+
 }
