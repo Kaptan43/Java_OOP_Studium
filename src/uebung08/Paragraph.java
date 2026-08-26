@@ -4,7 +4,7 @@ import static java.lang.Character.isLetter;
 import static java.lang.Character.isWhitespace;
 
 public class Paragraph implements TextComponent{
-    private String text;
+    private final String text;
 
     public Paragraph(String text){
         this.text = text;

@@ -1,12 +1,20 @@
 package uebung08;
 
 public class Image implements TextComponent{
-    private String url;
-    private String caption;
+    private final String url;
+    private final String caption;
 
     public Image(String url, String caption){
         this.url = url;
         this.caption = caption;
+    }
+
+    public String getUrl(){
+        return url;
+    }
+
+    public String getCaption(){
+        return caption;
     }
 
     @Override

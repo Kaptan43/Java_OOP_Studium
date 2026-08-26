@@ -44,5 +44,19 @@ public class Book {
         return result;
     }
 
+    public String toText(){
+        Visitor<String> visitor = new ToTextVisitor("");
+        StringBuilder sb = new StringBuilder();
+        sb.append(author);     //sb.append(author + "\n" + title + "\n");
+        sb.append("\n");
+        sb.append(title);
+        sb.append("\n");
+
+        for(TextComponent tc : contents){
+            sb.append(tc.accept(visitor));
+        }
+        return sb.toString();
+    }
+
 }
 
